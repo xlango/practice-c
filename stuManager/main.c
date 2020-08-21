@@ -22,6 +22,7 @@ void AddStuToLinkEnd(char *stuNum[10], char *stuName[10], int stuSorce);
 void FreeStuLink();
 void ShowStuLink();
 void ShowOrder();
+STUDENT* FindStuByNum(char* stuNum);
 
 
 int main(int argc, char const *argv[])
@@ -181,6 +182,37 @@ void ShowStuLink()
         //link move next node 
         pTemp = pTemp->pnext;
     }
+}
+
+//find stuent by number 
+STUDENT* FindStuByNum(char* stuNum)
+{
+    if (stuNum == NULL)
+    {
+        printf("find argument student number error\n");
+        return NULL;
+    }
+
+    if (g_pHead == NULL || g_pEnd == NULL)
+    {
+        printf("find student linked list is null \n");
+        return NULL;
+    }
+
+    STUDENT* pTemp = g_pHead;
+
+    while (pTemp != NULL)
+    {
+        if (strcmp(pTemp->stuNum,stuNum) == 0)
+        {
+            
+        }
+
+        pTemp = pTemp->pnext;
+        
+    }
+    
+    
 }
 
 //show command prompt
